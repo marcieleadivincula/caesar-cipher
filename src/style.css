@@ -1,0 +1,19 @@
+h1{
+  font-style: italic;
+}
+body{
+    background-color: burlywood;
+    font-family: Sans-Serif;
+    text-align: center;
+}
+.campo{
+  height: 50px;
+  width: 250px;
+  length: 100px;
+}
+
+.botao{
+  height: 50px;
+  width: 100px;
+  length: 50px;
+}
