@@ -1,65 +1,60 @@
-/*window.cipher = {
-  // ...
-};*/
-//const text = document.getElementById('texto1').value;
-//const key = document.getElementById('texto2').value;
+function encode(texto, chave) {
+  let textToCode = document.getElementById("texto").value;
+  let offset = document.getElementById("deslocamento").value;
+  let desloc = parseInt(offset);
+  let textArray = [];
+  let arrayAsc = [];
+  let textoCodificado = "";
 
-function encode() {
-  const text = document.getElementById('texto1').value;
-  const key = document.getElementById('number1').value;
-  let codmai = "A";
-  let codmin = "a";
-  let codAposition = codmai.charCodeAt(0);
-  let codaposition = codmin.charCodeAt(0);
-  let fullPosition = (codAposition + codaposition);
-  let codASC;
-
-  for (let i = 0; i < text.length; i++) {
-    codASC = text.charCodeAt(i);
-    if (codASC >= 65 && codASC <= 90) {
-      fullPosition =((codASC - codAposition + key) % 26) + codAposition;
-    } else if (codASC >= 97 && codASC <= 122) {
-      fullPosition =((codASC - codaposition + key) % 26) + codaposition;
-      console.log(encode);
-    } if (codASC);
+  for (let i = 0; i < textToCode.length; i++) {
+    textArray.push(textToCode.charCodeAt(i));
   }
 
-  //text.innerHTML = String.fromCharCode(fullPosition)
-  console.log(String.fromCharCode(fullPosition))
-  document.write(String.fromCharCode(fullPosition))
+  for (let j = 0; j < textArray.length; j++) {
+    if (textArray[j] >= 65 && textArray[j] <= 90) {
+      arrayAsc.push((((textArray[j] - 65 + desloc) % 26) + 65));
+    } else if (textArray[j] >= 97 && textArray[j] <= 122) {
+      arrayAsc.push((((textArray[j] - 97 + desloc) % 26) + 97));
+    } else {
+      arrayAsc.push(textArray[j]);
+    }
+  }
 
-  console.log("Resultado");
+  for (let g = 0; g < arrayAsc.length; g++) {
+    textoCodificado += String.fromCharCode(arrayAsc[g]);
+  }
 
-  encode('Manga', 1)
-  document.write(" <br> ")
-  encode('Jaca', 2)
-  document.write(" <br> ")
-
-function decode(){
-let codmai = "A";
-let codmin = "a";
-let codAposition= codmai.charCodeAt(0);
-let codaposition = codmin.charCodeAt(0);
-let fullPosition = (codAposition + codaposition);
-let codASC;
-
-for (let j = 0; j < text.length; j++) {
-codASC  = text.charCodeAt(j);
-if(codASC >=65 && codASC  <= 90){
-fullPosition = ((codASC  - codAposition + key)%26)+ codAposition;
-}else if(codASC  >=97 && codASC  <= 122){
-fullPosition = ((codASC  - codaposition + key)%26)+ codaposition;
-console.log(encode);
-}if(codASC);
+  document.getElementById("textocifrado").innerHTML = textoCodificado;
+ return textoCodificado;
 }
 
-//text.innerHTML = String.fromCharCode(fullPosition)
-console.log(String.fromCharCode(fullPosition))
-document.write(String.fromCharCode(fullPosition))
+function decode(texto, chave) {
+  let textToCode = document.getElementById("texto").value;
+  let offset = document.getElementById("deslocamento").value;
+  let desloc = parseInt(offset);
+  let textArray = [];
+  let arrayAsc = [];
+  let textoCodificado = "";
 
-console.log("Resultado")
+  for (let i = 0; i < textToCode.length; i++) {
+    textArray.push(textToCode.charCodeAt(i));
+  }
 
-decode ('Manga',1 )
-document.write(" <br> ")
-decode('Jaca', 2)
-document.write(" <br> ")
+  for (j = 0; j < textArray.length; j++) {
+    if (textArray[j] >= 65 && textArray[j] <= 90) {
+      arrayAsc.push((((textArray[j] - 90 - desloc) % 26) + 90));
+    } else if (textArray[j] >= 97 && textArray[j] <= 122) {
+      arrayAsc.push((((textArray[j] - 122 - desloc) % 26) + 122));
+    } else {
+      arrayAsc.push(textArray[j]);
+    }
+  }
+
+  for (g = 0; g < arrayAsc.length; g++) {
+    textoCodificado += String.fromCharCode(arrayAsc[g]);
+  }
+
+  document.getElementById("textocifrado").innerHTML = textoCodificado;
+  return textoCodificado;
+}
+

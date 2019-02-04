@@ -1,19 +1,25 @@
-h1{
-  font-style: italic;
-}
-body{
+body {
     background-color: burlywood;
-    font-family: Sans-Serif;
     text-align: center;
-}
-.campo{
-  height: 50px;
-  width: 250px;
-  length: 100px;
+    font-size: 100%;
+    width: 100%;
+    height: 100%;
 }
 
-.botao{
-  height: 50px;
-  width: 100px;
-  length: 50px;
+#texto {
+    width: 400px;
+    height: 50px;
+    border: 2px
+}
+
+#deslocamento {
+    width: 132px;
+    height: 18px;
+    border: 2px
+}
+
+#textocifrado {
+    width: 400px;
+    height: 50px;
+    border: 2px
 }

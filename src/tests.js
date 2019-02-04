@@ -1,58 +1,24 @@
-String.fromCharCode(65, 66, 67)
-string.charCodeAt(índice);
+function teste(calculado, esperado) {
+    if (calculado === esperado) {
+        console.log("Passou!");
+        return true;
+    } else {
+        console.log("Deu Erro! " + calculado + " não é igual a " + esperado);
+        return false;
+    }
+}
 
-//Altere o texto entre as aspas e execute seu código para ver seu nome animado!
-drawName('Marciele');
-// O código abaixo permitirá que você interaja com as letras
-bounceBubbles();
-
-var red = [0, 100, 63];
-var orange = [40, 100, 60];
-var green = [75, 100, 40];
-var blue = [196, 77, 55];
-var purple = [280, 50, 60];
-
-var message = 'Change the message!';
-
-drawName(message, blue);
-bounceBubbles();
-
-// Color variables:
-red = [0, 100, 63];
-orange = [40, 100, 60];
-green = [75, 100, 40];
-blue = [196, 77, 55];
-purple = [280, 50, 60];
-
-// Letters in the message will cycle through these colors:
-letterColors = [red, orange, green, blue, purple];
-
-message = 'Multiple colors!';
-
-drawName(message, letterColors);
-bounceBubbles();
-
-
-// Define color variables:
-red = [0, 100, 63];
-orange = [40, 100, 60];
-green = [75, 100, 40];
-blue = [196, 77, 55];
-purple = [280, 50, 60];
-letterColors = [red, orange, green, blue, purple];
-
-// This variable controls the smallest distance at which a mouse will 
-mouseResponseThreshold = 50;
-
-// This variable controls how strongly the dots will try to return to their starting position
-friction = 0.85;
-
-// This variable controls how much the dots will rotate when interacting
-rotationForce = 0.0;
-
-message = 'Change the physics!';
-
-drawName(message, letterColors);
-bounceBubbles();
+teste(encode("Banana", 2), "Dcpcpc");
+console.log(encode("Banana", 2));
+teste(encode("Água", 4), "Ákye");
+console.log(encode("Água", 4));
+teste(encode("suco", 5), "xzht");
+console.log(encode("suco", 5));
+teste(decode("xzht", 5), "suco");
+console.log(encode("xzht", 5));
+teste(decode("Thyph", 7), "Maria");
+console.log(encode("Thyph", 7));
+teste(decode("Hqflforségld", 3), "Enciclopédia");
+console.log(encode("Hqflforségld", 3));
 
 
