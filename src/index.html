@@ -11,21 +11,20 @@
 <body>
   <h1>Cifra de César</h1>
   <div>
-    <p>Escreva algo para cifrar ou decifrar:</p><input type="text" id="texto">
-    <p>Selecione um número para o deslocamento</p><input type="number" id="deslocamento">
-  </div>
+    <p>Escreva algo para cifrar ou decifrar:</p>
+    <input type="text" id="texto">
+    <p>Selecione um número para o deslocamento</p>
+    <input type="number" id="deslocamento">
 
-  <div>
-    <button class="btn" onclick="encode()">Cifrar</button>
-    <button class="btn" onclick="decode()">Decifrar</button>
-  </div>
+    <input class="btn" id="cifrar" type="button" value="Cifrar">
+    <input class="btn" id="decifrar" type="button" value="Decifrar">
 
-  <div>
-    <p><label for="textocifrado">Veja sua mensagem:</label></p>
+    <p>Veja sua mensagem abaixo:</p>
     <textarea id="textocifrado" name="Seu Texto"></textarea>
-
-    <script src="script.js"></script>
-    <script src="tests.js"></script>
+  </div>
+  <!-- <script src="script.js"></script> -->
+  <script src="index.js"></script>
+  <script src="tests.js"></script>
 </body>
 
 </html>

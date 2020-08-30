@@ -25,7 +25,7 @@ function encode(texto, chave) {
   }
 
   document.getElementById("textocifrado").innerHTML = textoCodificado;
- return textoCodificado;
+  return textoCodificado;
 }
 
 function decode(texto, chave) {
@@ -57,4 +57,3 @@ function decode(texto, chave) {
   document.getElementById("textocifrado").innerHTML = textoCodificado;
   return textoCodificado;
 }
-
